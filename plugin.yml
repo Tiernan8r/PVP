@@ -1,0 +1,12 @@
+main: me.Tiernanator.PVP.Main
+version: 2.0
+name: PvP
+description: A Plugin that handles PvP.
+load: POSTWORLD
+author: Tiernanator
+website: None
+database: false
+depend: [Factions]
+prefix: PvP
+softdepend: []
+loadbefore: []
