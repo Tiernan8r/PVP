@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.Tiernanator.PVP.Events.OnPlayerAttackPlayer;
 
-public class Main extends JavaPlugin {
+public class PvPMain extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {

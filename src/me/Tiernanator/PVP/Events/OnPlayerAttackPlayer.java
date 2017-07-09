@@ -9,12 +9,12 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import me.Tiernanator.Factions.Factions.Faction;
 import me.Tiernanator.Factions.Factions.FactionAccessor;
-import me.Tiernanator.PVP.Main;
+import me.Tiernanator.PVP.PvPMain;
 
 public class OnPlayerAttackPlayer implements Listener {
 	
 
-	public OnPlayerAttackPlayer(Main main) {
+	public OnPlayerAttackPlayer(PvPMain main) {
 	}
 
 	@EventHandler
