@@ -5,11 +5,11 @@ import java.util.List;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import me.Tiernanator.Factions.Factions.Faction;
 import me.Tiernanator.Factions.Factions.FactionAccessor;
 import me.Tiernanator.PVP.PvPMain;
+import me.Tiernanator.Utilities.Events.CustomEvents.PlayerDamagePlayerEvent;
 
 public class OnPlayerAttackPlayer implements Listener {
 	
@@ -18,25 +18,16 @@ public class OnPlayerAttackPlayer implements Listener {
 	}
 
 	@EventHandler
-	public void onPlayerAttackPlayer(EntityDamageByEntityEvent event) {
+	public void onPlayerAttackPlayer(PlayerDamagePlayerEvent event) {
 		
-		if (!(event.getEntity() instanceof Player)) {
-			return;
-		}
-		if (!(event.getDamager() instanceof Player)) {
-			return;
-		}
-
-		Player attacked = (Player) event.getEntity();
-		Player attacker = (Player) event.getDamager();
+		Player attacked = (Player) event.getAttackedPlayer();
+		Player attacker = (Player) event.getPlayer();
 		
 		FactionAccessor attackedAccessor = new FactionAccessor(attacked);
 		FactionAccessor attackerAccessor = new FactionAccessor(attacker);
 		
-//		Faction attackedFaction = Faction.getPlayerFaction(attacked);
 		Faction attackedFaction = attackedAccessor.getPlayerFaction();
 		Faction attackerFaction = attackerAccessor.getPlayerFaction();
-//		Faction attackerFaction = Faction.getPlayerFaction(attacker);
 		
 		List<Faction> allFactions = Faction.allFactions();
 		Faction rogueFaction = allFactions.get(allFactions.size() - 1);

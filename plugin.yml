@@ -6,7 +6,7 @@ load: POSTWORLD
 author: Tiernanator
 website: None
 database: false
-depend: [Factions]
+depend: [Utilities, Factions]
 prefix: PvP
 softdepend: []
 loadbefore: []
